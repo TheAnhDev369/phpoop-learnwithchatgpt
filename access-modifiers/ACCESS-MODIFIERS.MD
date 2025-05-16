@@ -24,3 +24,21 @@ echo $nguoi->ten;        // ✅ OK
 echo $nguoi->tuoi;       // ❌ Lỗi
 echo $nguoi->matKhau;    // ❌ Lỗi
 ```
+
+-   Trong PHP, function (hàm) trong class có thể có 3 mức độ truy cập giống như biến (thuộc tính):
+       
+|Từ khóa        |Gọi từ bên ngoài object          |Gọi từ bên trong class |
+|---------------|---------------------------------|-----------------------|
+|public	        |✅ Được gọi	                    |✅ Được gọi            |
+|protected	    |❌ Không được gọi	            |✅ Được gọi            |
+|private	    |❌ Không được gọi	            |✅ Được gọi            |
+
+-   ✅ Tóm gọn dễ hiểu
+-   ✅ public function: Ai gọi cũng được — kể cả code ngoài class.
+-   🔐 protected function: Chỉ gọi được bên trong class hoặc class con kế thừa.
+-   🔒 private function: Chỉ gọi được bên trong chính class đó, không truyền ra ngoài hay dùng từ class con được.
+
+-   🎁 Mẹo nhớ cực đơn giản:
+    +   public → ai cũng biết
+    +   protected → chỉ nội bộ và con cháu biết
+    +   private → chỉ một mình tôi biết 😎
